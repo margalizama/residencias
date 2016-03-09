@@ -1,0 +1,78 @@
+<?php
+
+function connBBDD() 
+
+{
+	$DBName = 'nombre_de_la_bbdd';
+	$DBUser = 'usuario_de_la_bbdd';
+	$DBHost = 'host';
+	$DBPassword = 'contraseña_de_la_bbdd';
+
+	$conn = mysql_connect($DBHost,$DBUser,$DBPassword);
+	if($conn != null)
+  		$conexion = mysql_select_db($DBName, $conn);
+  	return $conn;
+}
+
+function closeBBDD($conn) 
+{
+  	mysql_close($conn);
+}
+
+function select($conn, $sql)
+{
+	$results = mysql_query($sql);
+	$resultados = obtenerArray($results);
+	if($resultados != "")
+		return $resultados;
+	else
+		return 0;
+}
+
+function insert($conn, $sql)
+{
+	$results = mysql_query($sql,$conn);
+	if (!$results) 
+		return false;
+	return true;
+}
+
+function update($conn, $sql)
+{
+	$results = mysql_query($sql,$conn);
+	if (!$results) 
+		return false;
+	return true;
+}
+
+function delete($conn, $sql)
+{
+	$results = mysql_query($sql,$conn);
+	if (!$results) 
+		return false;
+	return true;
+}
+
+function obtenerArray($rs)
+{
+      $j=0;
+      $filas = "";
+      $num = mysql_num_fields($rs);
+      for($i=0;$i<$num;$i++){
+          $columnas[$i] = mysql_field_name($rs, $i);
+      }
+      while($fila = mysql_fetch_assoc($rs)){
+          $filas[$j] = $fila;
+          $j++;
+      }
+         return $filas;
+}
+
+
+$total = mysql_num_rows(mysql_query("select time_at FROM".self::$tablename."where time_at=$this->time_at"));
+if($total==0){
+    echo 'No hay usuarios';
+}else{
+    echo 'Hay un total de '.$total.' usuarios';
+}
+?>
