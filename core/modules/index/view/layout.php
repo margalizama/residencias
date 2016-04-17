@@ -22,6 +22,16 @@
       <script src='res/lang-all.js'></script>
       <?php endif; ?>
 
+       <!--estadisticos-->
+      <?php if(isset($_GET["view"]) && $_GET["view"]=="estadistics"):?>
+      <script src='charts/Chart.js'></script>
+       <!--MORRIS-->
+       <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+       <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+       <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+       <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+       <script src='MORRIS/morris.js'></script>
+        <?php endif; ?>
 </head>
 <body>
        
@@ -56,6 +66,7 @@ if(Session::getUID()!=""):
           <li><a href="index.php?view=categories"><i class="fa fa-th-list"></i> Categorias</a></li>
           <li><a href="index.php?view=contacts"><i class="fa fa-male"></i> Contactos</a></li>
           <li><a href="index.php?view=Docs"><i class="fa fa-file-pdf-o"></i> Oficios Generados</a></li>
+          <li><a href="index.php?view=estadistics"><i class="fa fa-area-chart"></i> Estadisticas Generadas</a></li>
           <?php if($u->is_admin):?>
           <li><a href="index.php?view=users"><i class="fa fa-users"></i> Usuarios </a></li>
           <li><a href="index.php?view=changelog"><i class="fa fa-filter"></i> lista de ideas</a></li>

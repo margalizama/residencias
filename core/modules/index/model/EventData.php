@@ -48,8 +48,8 @@ class EventData {
 			/*$sql = "insert into ".self::$tablename."(title,description,project_id,date_at,time_at,time_fin,category_id,user_id,created_at,presidente,secre,vocal) ";
 			 $sql .= "value (\"$this->title\",\"$this->description\",$this->project_id,\"$this->date_at\",\"$v\",\"$ti_f\",$this->category_id,$this->user_id,$this->created_at,$this->presidente,$this->secre,$this->vocal)";*/
 		 	echo "<script> alert('Ya hay un evento registrado a las $va este evento se recorrera a las $v del dia selecionado $ti_f');</script>";
-		 	$sql = "insert into ".self::$tablename."(title,project_id,date_at,time_at,time_fin,category_id,user_id,created_at,presidente,secre,vocal) ";
-			 $sql .= "value (\"$this->title\",$this->project_id,\"$this->date_at\",\"$v\",\"$ti_f\",$this->category_id,$this->user_id,$this->created_at,$this->presidente,$this->secre,$this->vocal)";
+		 	$sql = "insert into ".self::$tablename."(title,project_id,date_at,time_at,time_fin,category_id,user_id,created_at,presidente,secre,vocal,sex) ";
+			 $sql .= "value (\"$this->title\",$this->project_id,\"$this->date_at\",\"$v\",\"$ti_f\",$this->category_id,$this->user_id,$this->created_at,$this->presidente,$this->secre,$this->vocal,$this->sex)";
 		return Executor::doit($sql);	 		
 			
 		 }
@@ -60,8 +60,8 @@ class EventData {
 			$v1 = strtotime('+'.$v2.' seconds', strtotime($va));//agregar los segundos
 			$v=date('H:i:s', $v1);//la hora con7 los 20 min7utos
 			echo "<script> alert('cosa');</script>";
-			$sql = "insert into ".self::$tablename."(title,project_id,date_at,time_at,time_fin,category_id,user_id,created_at,presidente,secre,vocal) ";
-			 $sql .= "value (\"$this->title\",$this->project_id,\"$this->date_at\",\"$v\",\"$ti_f\",$this->category_id,$this->user_id,$this->created_at,$this->presidente,$this->secre,$this->vocal)";
+			$sql = "insert into ".self::$tablename."(title,project_id,date_at,time_at,time_fin,category_id,user_id,created_at,presidente,secre,vocal,sex) ";
+			 $sql .= "value (\"$this->title\",$this->project_id,\"$this->date_at\",\"$v\",\"$ti_f\",$this->category_id,$this->user_id,$this->created_at,$this->presidente,$this->secre,$this->vocal,$this->sex)";
 			 return Executor::doit($sql);
 			
 		}

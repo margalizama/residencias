@@ -24,9 +24,11 @@ $project_id = "NULL";
 if($_POST["project_id"]!=""){ $project_id = $_POST["project_id"]; }
 $r->project_id = $project_id;
 
+$r->sex = $_POST["sex"];
 $r->date_at = $_POST["date_at"];
 $r->time_at = $_POST["time_at"];
 $r->user_id = $_SESSION["user_id"];
+
 $r->add();
 
 Core::redir("./index.php?view=reservations");

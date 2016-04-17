@@ -9,6 +9,8 @@ class CategoryData {
 		$this->email = "";
 		$this->password = "";
 		$this->created_at = "NOW()";
+		$this->description = "";
+
 	}
 
 	public function add(){
@@ -28,7 +30,7 @@ class CategoryData {
 
 // partiendo de que ya tenemos creado un objecto CategoryData previamente utilizamos el contexto
 	public function update(){
-		$sql = "update ".self::$tablename." set name=\"$this->name\" where id=$this->id";
+		$sql = "update ".self::$tablename." set name=\"$this->name\", description=\"$this->description\" where id=$this->id";
 		Executor::doit($sql);
 	}
 

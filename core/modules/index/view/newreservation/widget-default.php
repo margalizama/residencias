@@ -80,8 +80,17 @@ $pkemon = ContactData::getAll();
     <!---->
     <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Nombre Egresado</label>
-    <div class="col-lg-10">
-      <input type="text" name="title" required class="form-control" id="inputEmail1" placeholder="Titulo">
+    <div class="col-lg-6">
+      <input type="text" name="title" required class="form-control" id="inputEmail1" placeholder="nombres y apellidos">
+    </div>
+    <label for="inputEmail1" class="col-lg-2 control-label">Sexo</label>
+    <div class="col-lg-4">
+    <select name="sex" class="form-control">
+    <option value="">-- Seleccione --</option>
+    <option value="0">-- MASCULINO --</option>
+    <option value="1">-- FEMENINO --</option>
+    </select>
+    </div>
     </div>
   </div>
   <!--<div class="form-group">

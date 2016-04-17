@@ -28,7 +28,7 @@ foreach($events as $event){
 			firstDay: 0,
 			lang:'es',
 			aspectRatio: 2.45,
-			editable: false,
+			editable: true,
 			businessHours: true, // display business hours
 			eventLimit: true, // allow "more" link when too many events
 			<?php  if(!empty($thejson)) { ?>
