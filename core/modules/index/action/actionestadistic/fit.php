@@ -1,6 +1,7 @@
 <?php
-function fechaaaaaaaa($detal){
-  $dia=date("l",strtotime($detal));
+date_default_timezone_set('America/Mexico_City');
+function fechaaaaaaaa(){
+  $dia=date("l");
 
 if ($dia=="Monday") $dia="Lunes";
 if ($dia=="Tuesday") $dia="Martes";
@@ -10,7 +11,7 @@ if ($dia=="Friday") $dia="Viernes";
 if ($dia=="Saturday") $dia="Sabado";
 if ($dia=="Sunday") $dia="Domingo";
 
-$mes=date("F",strtotime($detal));
+$mes=date("F");
 
 if ($mes=="January") $mes="Enero";
 if ($mes=="February") $mes="Febrero";
@@ -25,8 +26,8 @@ if ($mes=="October") $mes="Octubre";
 if ($mes=="November") $mes="Noviembre";
 if ($mes=="December") $mes="Diciembre";
 
-$year=date("Y",strtotime($detal));
-$dia2=date("d",strtotime($detal));
+$year=date("Y");
+$dia2=date("d");
 return "$dia, $dia2 de $mes de $year";  
 }
 ?>

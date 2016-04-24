@@ -34,6 +34,7 @@ $r->add();
 Core::redir("./index.php?view=reservations");
 ?>
 <?php
+date_default_timezone_set('America/Mexico_City');
 include_once('fpdf/fpdf.php');
 require("fit.php");
 $category = null;

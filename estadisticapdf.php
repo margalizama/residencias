@@ -43,28 +43,15 @@ $pdf->Cell(25,7,'CARRERA',1,0,'C');
 $pdf->Cell(25,7,'OPCION',1,0,'C');
 $pdf->Cell(25,7,'TITULADOS',1,0,'C');
 /*****
-*/
-$listado = mysql_query("SELECT * FROM ALUMNOS WHERE idcurso=$curso ORDER BY apellidos ASC");
- 
-if(mysql_num_rows($listado)>0){
-while($fila = mysql_fetch_array($listado)){
- $pdf->Cell(30,10,$fila['id'],1,0); //id   
- $pdf->Cell(30,10,$fila['apellidos'],1,0); //Celda con ancho de 50, alto de 10, el dato, borde 1, sin salto de linea**
- $pdf->Cell(30,5,$fila['nombre'],1,0); //**
- $pdf->Cell(75,5,$fila['domicilio'],1,0); //**
- $pdf->Cell(25,5,$fila['telefono'],1,0); //**
- $pdf->Cell(25,5,$fila['email'],1,0); //**
- $pdf->Ln(); //Hacer el salto de linea para la siguiente fila del registro
- 
-}
-}
+
 else{
 $pdf->Cell(0,10,"No existen registros",0,0,"C");
 }
 /*****
 */
-$pdf->Output(); //Salida al navegador
-//$self = $_SERVER['index.php']; //Obtenemos la página en la que nos encontramos
-//header("refresh:10; url=$self"); //Refrescamos cada 300 segundos
- 
+$dir="oficios/";
+$file="Relacion alumnos titulados.pdf";
+$a=$dir.$file;
+//chmod($a, 0755);
+$pdf->Output($a,'F');
 ?>

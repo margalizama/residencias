@@ -16,10 +16,13 @@
  <div class="col-md-8">
    <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">
+      <form class="form-horizontal" role="form" method="post" action="./?action=actionestadistic">
       <button type="submit" class="btn btn-default">Exportar Datos a PDF</button>
+      </form>
     </div>
   </div>
 </div>
+
 
   <script>
   Morris.Donut({
